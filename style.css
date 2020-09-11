@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(images/app-background.png);
+    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin:0;
+    /* padding: 20px; */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    width: 80%;
+}
+
+.innerContainer{
+    background-color: #17222D;
+    width: 95%;
+    border-radius: 30px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction:row;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    justify-content: center;
+}
+
+.topLeft{
+    position: relative;
+}
+
+.otherTempTimes, .otherTempStates{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tempTimes, .tempState{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.smaller-font{
+    font-weight: 200;
+    font-size: 11px;
+}
+/* 
+.top{
+    position: relative;
+    width: 70px;
+} */
+
+.scroll{
+    position: absolute;
+    top: 30%;
+}
+
+.leftScroll{
+    left: 2em;
+}
+
+.rightScroll{
+    right: 2em;
+}
+
+.currentWeatherBackPic{
+    height: 45vh;
+}
+
+.middleLeft{
+    position: relative;
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectedWeatherInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rightSide{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rightSideContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.controls{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
+
+@media(max-width: 800px){
+    .container{
+        margin-top: 200px;
+    }
+
+    .title{
+        width: 40%;
+    }
+
+    .innerContainer{
+        flex-direction: column;
+    }
+
+    .currentWeatherBackPic{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
