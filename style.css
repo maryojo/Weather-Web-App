@@ -66,19 +66,6 @@ body{
     width: 70px;
 } */
 
-.scroll{
-    position: absolute;
-    top: 30%;
-}
-
-.leftScroll{
-    left: 2em;
-}
-
-.rightScroll{
-    right: 2em;
-}
-
 .currentWeatherBackPic{
     height: 45vh;
 }
@@ -109,7 +96,7 @@ body{
 
 .controls{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 

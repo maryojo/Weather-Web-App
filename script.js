@@ -7,20 +7,17 @@ let currentWeatherIcon = document.getElementById('currentWeatherIcon');
 
 //Buttons
 const reset = document.getElementById('reset');
+//make necessary changes here, changes made to html doc
 let currentWeather = document.getElementById('currentWeather');
 let weatherByMinute = document.getElementById('weatherByMinute');
 let weatherByHour = document.getElementById('weatherByHour');
 let dailyWeather = document.getElementById('dailyWeather');
 let historicalWeather = document.getElementById('historicalWeather');
 
-//test
-const here =document.getElementById('here');
-const clatitude= document.getElementById('latitude');
-const clongitude = document.getElementById('longitude');
-
 
 //App Data
-let time = document.querySelectorAll('.time');
+let time = document.querySelectorAll('.otherTemp');
+let dayofWeek = document.querySelectorAll('.dayofWeek');
 let currentTemp = document.getElementById('currentTemp');
 let tempLow = document.getElementById('tempLow');
 let tempHigh = document.getElementById('tempHigh');
@@ -32,14 +29,18 @@ let currentTime =document.getElementById('currentTime');
 let currentLocation = document.getElementById('currentLocation');
 let searchButton = document.getElementById('searchButton');
 
+
+//Try to get time and date using API
 //Get Time and date
  const timeNow = () => {
     const time = new Date();
     let timeIn24h = time.getHours();
+    let mode = 'AM';
     if(timeIn24h > 12){
         timeIn24h = timeIn24h - 12;
+        mode = 'PM';
         }
-    currentTime.innerHTML = `${timeIn24h} : ${time.getMinutes()}`;
+    currentTime.innerHTML = `${timeIn24h} : ${time.getMinutes()} ${mode}`;
  }
 
  const dateNow = () =>{
@@ -79,6 +80,7 @@ if(navigator.geolocation){
 }
 
 //Get current location, convert to city name and get weather details
+//Add catch in case of error
 const getPositionHere = (position) =>{
     let currentLatitude = position.coords.latitude;
     let currentLongitude = position.coords.longitude;
@@ -109,15 +111,26 @@ checkGeolocator();
 
 //refresh weather every 30 minutes
 //WEATHER FOR DIFFERENT DAYS
+//add catch in case of error
 const getWeatherOtherDays = () =>{
     fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&appid=d74fc369be79084d255892637839ecab&units=metric')
     .then((response) => response.json())
     .then(data => {
         console.log(data);
-        let dailyTemp = data ['hourly'][0]['clouds'];
-        console.log(dailyTemp);
+        for(let i = 0; i < (data['daily'].length); i++){
+            let otherDaysTemp = data['daily'][i]['temp']['day'];
+            for(let j = 0; j < time.length; j++){
+                time[j].innerHTML = otherDaysTemp;
+            }
+            console.log(otherDaysTemp);
+            //check if this works
+            let otherWeekDays = data['daily'][i];
+            const i = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            otherWeekDays[i].innerHTML = dayofWeek;
+        }
     })
 }
+
 
 getWeatherOtherDays();
 
