@@ -30,6 +30,8 @@ let currentLocation = document.getElementById('currentLocation');
 let searchButton = document.getElementById('searchButton');
 
 
+const date =  new Date();
+
 //Try to get time and date using API
 //Get Time and date
  const timeNow = () => {
@@ -44,8 +46,6 @@ let searchButton = document.getElementById('searchButton');
  }
 
  const dateNow = () =>{
-     const date =  new Date();
-     
      //Date
      todayDate = date.getDate();
 
@@ -108,33 +108,44 @@ checkGeolocator();
 //on search, get weather of location
 
 
-
 //refresh weather every 30 minutes
 //WEATHER FOR DIFFERENT DAYS
 //add catch in case of error
+
+// console.log(dayofWeek);
+//  console.log(time);
+
 const getWeatherOtherDays = () =>{
     fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&appid=d74fc369be79084d255892637839ecab&units=metric')
     .then((response) => response.json())
     .then(data => {
-        console.log(data);
-        for(let i = 0; i < (data['daily'].length); i++){
-            let otherDaysTemp = data['daily'][i]['temp']['day'];
-            for(let j = 0; j < time.length; j++){
-                time[j].innerHTML = otherDaysTemp;
+
+            for(let b = 0; b < time.length; b++){
+                for(let a = 0; a < (data['daily'].length); a++){
+                let z = data['daily'][a]['temp']['day'];
+                 time[b].innerHTML = z;
+                b++;
+                // console.log(z);
+                }
+
             }
-            console.log(otherDaysTemp);
-            //check if this works
-            let otherWeekDays = data['daily'][i];
-            const i = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            otherWeekDays[i].innerHTML = dayofWeek;
-        }
-    })
-}
 
+            for(let j = 0; j < dayofWeek.length; j++){
+                for(let i = 0; i < (data['daily'].length); i++){
 
+                    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    let d = new Date(data['daily'][i]['dt'] * 1000);
+                    let dayName = weekDays[d.getDay()];
+                    dayofWeek[j].innerHTML = dayName;
+                    j++;
+                    console.log(dayofWeek[j]);
+                }
+            }
+        } )
+    }
 getWeatherOtherDays();
 
 
 //app features
 //  store recent searches in local storage
-//                          
+               
