@@ -45,7 +45,7 @@ if(navigator.geolocation){
 }
 }
 
-let call, encodeCall, cityName, countryName, currentLocationWeather, plat, plon, d, dayName, placeName;
+let u, call, encodeCall, cityName, countryName, currentLocationWeather, plat, plon, d, dayName, placeName;
 
 //Get current location, convert to city name and get weather details
 //Add catch in case of error
@@ -53,6 +53,13 @@ let call, encodeCall, cityName, countryName, currentLocationWeather, plat, plon,
 //     placeName = `q=${searchInput.value}`;
 //     getCityDate(placeName);
 // });
+searchButton.addEventListener('click', function(){
+    placeName = `q=${searchInput.value}`;
+    getCityDate(placeName);
+    if(u!==0){
+        clearInterval(u);
+    }
+});
 
 const getPositionHere = (position) =>{
     //identify users longitude & latitude
@@ -126,7 +133,7 @@ const getCityDate = (g) =>{
         }
 
         //on a normal load, setinterval is this
-        let u = 0;
+        u = 0;
         u = setInterval(() => {
             getTime();
         }, 10);
@@ -134,13 +141,7 @@ const getCityDate = (g) =>{
         //on click, pass this parameter, clearInterval and set new IntervAL
         
         //
-        searchButton.addEventListener('click', function(){
-            placeName = `q=${searchInput.value}`;
-            getCityDate(placeName);
-            if(u!==0){
-                clearInterval(u);
-            }
-        });
+        
 
         // let ref = setInterval(() => {
         //     getTime();
