@@ -28,44 +28,9 @@ let currentDate = document.getElementById('currentDate');
 let currentTime =document.getElementById('currentTime');
 let currentLocation = document.getElementById('currentLocation');
 let searchButton = document.getElementById('searchButton');
+let searchInput = document.getElementById('search');
 
-
-const date =  new Date();
-
-//Try to get time and date using API
-//Get Time and date
- const timeNow = () => {
-    const time = new Date();
-    let timeIn24h = time.getHours();
-    let mode = 'AM';
-    if(timeIn24h > 12){
-        timeIn24h = timeIn24h - 12;
-        mode = 'PM';
-        }
-    currentTime.innerHTML = `${timeIn24h} : ${time.getMinutes()} ${mode}`;
- }
-
- const dateNow = () =>{
-     //Date
-     todayDate = date.getDate();
-
-     //Day of the week
-     let weekDay = date.getDay();
-     const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-     //Months
-     let month = date.getMonth();
-     const months =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-     //Year
-     let year = date.getFullYear();
-
-     currentDate.innerHTML = `${weekDays[weekDay]}, ${months[month]} ${todayDate}, ${year}`;
- }
-
- let refreshTime = setInterval(timeNow, 0);
- let refreshDate = setInterval(dateNow, 0 );
-
+const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 //GET CURRENT LOCATION
 //Functions
@@ -73,30 +38,124 @@ const date =  new Date();
 const checkGeolocator = () =>{
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(getPositionHere);
+    // navigator.geolocation.getCurrentPosition(getWeatherOtherDays);
 } else {
     alert('Geolocation is not supported. Try another browser');
     //Run a function which loads a default location
 }
 }
 
+let call, encodeCall, cityName, countryName, currentLocationWeather, plat, plon, d, dayName, placeName;
+
 //Get current location, convert to city name and get weather details
 //Add catch in case of error
+// searchButton.addEventListener('click', function(){
+//     placeName = `q=${searchInput.value}`;
+//     getCityDate(placeName);
+// });
+
 const getPositionHere = (position) =>{
-    let currentLatitude = position.coords.latitude;
-    let currentLongitude = position.coords.longitude;
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat='+ currentLatitude +'&lon=' + currentLongitude + '&appid=d74fc369be79084d255892637839ecab&units=metric')
+    //identify users longitude & latitude
+     window.currentLatitude = position.coords.latitude;
+     window.currentLongitude = position.coords.longitude;
+     call = `lat=${window.currentLatitude}&lon=${window.currentLongitude}`;
+
+     getCityDate(call);
+}
+
+const getCityDate = (g) =>{
+     console.log(g);
+    fetch('https://api.openweathermap.org/data/2.5/weather?'+g+'&appid=d74fc369be79084d255892637839ecab&units=metric')
 .then(response => response.json())
 .then(data => {
     console.log(data);
-    let cityName = data['name'];
-    let countryName = data['sys']['country'];
-    let currentLocationWeather = data['main']['temp'];
+
+    
+    //Convert latitude & longitude to Location Name
+    cityName = data['name'];
+    countryName = data['sys']['country'];
+    currentLocationWeather = data['main']['temp'];
+    let latitude = data['coord']['lat'];
+    let longitude = data['coord']['lon'];
     currentLocation.innerHTML = `${cityName}, ${countryName}`;
     currentTemp.innerHTML = `${currentLocationWeather}`;
+    
+
+    return fetch ('https://api.openweathermap.org/data/2.5/onecall?lat='+latitude+'&lon='+longitude+'&appid=d74fc369be79084d255892637839ecab&units=metric');
+}) .then(response => response.json())
+.then(data => {
+    console.log(data);
+    for(let b = 0; b < time.length; b++){
+        for(let a = 0; a < (data['daily'].length); a++){
+        // console.log(data['daily'].length);
+        z = data['daily'][a]['temp']['day'];
+         time[b].innerHTML = z;
+        b++;
+        } 
+    }
+
+    //looping through the name of each day 
+    for(let j = 0; j < dayofWeek.length; j++){
+        for(let i = 0; i < (data['daily'].length); i++){
+
+            d = new Date(data['daily'][i]['dt'] * 1000);
+            dayName = weekDays[d.getDay()];
+            dayofWeek[j].innerHTML = dayName;
+            // console.log(dayofWeek[j]);
+            j++;
+            
+        }
+    }
+
+    let timezone = data['timezone'];
+            let values = {
+                timeZone: timezone,
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                weekday: 'short',
+                hour: '2-digit',
+                minute: '2-digit',
+            }
+        
+        // let u;
+        const getTime = () =>{
+            // clearTimeout(loadTimewithClick);
+            let d = new Intl.DateTimeFormat([], values);
+            currentTime.innerHTML = `${d.format(new Date())}`;
+        }
+
+        //on a normal load, setinterval is this
+        let u = 0;
+        u = setInterval(() => {
+            getTime();
+        }, 10);
+
+        //on click, pass this parameter, clearInterval and set new IntervAL
+        
+        //
+        searchButton.addEventListener('click', function(){
+            placeName = `q=${searchInput.value}`;
+            getCityDate(placeName);
+            if(u!==0){
+                clearInterval(u);
+            }
+        });
+
+        // let ref = setInterval(() => {
+        //     getTime();
+        // }, 10);
+
+        // if(u === 0){
+        //     clearInterval(ref);
+        // }
+        // clearInterval(refreshTime);
 })
+
 }
 
 //Calling Functions
+//check if geolocatoris supported
 checkGeolocator();
 
 //SEARCHING FOR WEATHER OF A LOCATION
@@ -107,45 +166,12 @@ checkGeolocator();
 //on click of weathernow, show weather
 //on search, get weather of location
 
-
-//refresh weather every 30 minutes
 //WEATHER FOR DIFFERENT DAYS
 //add catch in case of error
 
-// console.log(dayofWeek);
-//  console.log(time);
-
-const getWeatherOtherDays = () =>{
-    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&appid=d74fc369be79084d255892637839ecab&units=metric')
-    .then((response) => response.json())
-    .then(data => {
-
-            for(let b = 0; b < time.length; b++){
-                for(let a = 0; a < (data['daily'].length); a++){
-                let z = data['daily'][a]['temp']['day'];
-                 time[b].innerHTML = z;
-                b++;
-                // console.log(z);
-                }
-
-            }
-
-            for(let j = 0; j < dayofWeek.length; j++){
-                for(let i = 0; i < (data['daily'].length); i++){
-
-                    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                    let d = new Date(data['daily'][i]['dt'] * 1000);
-                    let dayName = weekDays[d.getDay()];
-                    dayofWeek[j].innerHTML = dayName;
-                    j++;
-                    console.log(dayofWeek[j]);
-                }
-            }
-        } )
-    }
-getWeatherOtherDays();
+// const h= `q=${searchInput.value}`
 
 
 //app features
 //  store recent searches in local storage
-               
+    
