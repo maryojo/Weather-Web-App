@@ -21,60 +21,60 @@
 
                     <div class="otherTempTimes">
                         <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
+                            <p class="smaller-font dayofWeek today">Monday</p>
+                            <p class="smaller-font today">
+                                <span class="otherTemp today"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Tuesday</p>
                             <p class="smaller-font">
                                 <span class="otherTemp"></span>&deg;C
                             </p>
-                            <img src="icons/" alt="" class="smallIcon">
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Wednesday</p>
+                            <p class="smaller-font">
+                                <span class="otherTemp"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Thursday</p>
+                            <p class="smaller-font">
+                                <span class="otherTemp"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Friday</p>
+                            <p class="smaller-font">
+                                <span class="otherTemp"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Saturday</p>
+                            <p class="smaller-font">
+                                <span class="otherTemp"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
+                        </div>
+                        <div class="tempTimes">
+                            <p class="smaller-font dayofWeek">Sunday</p>
+                            <p class="smaller-font">
+                                <span class="otherTemp"></span>&deg;C
+                            </p>
+                            <div class="dayIcon"></div>
                         </div>
                         <div class="tempTimes">
                             <p class="smaller-font dayofWeek">Monday</p>
                             <p class="smaller-font">
                                 <span class="otherTemp"></span>&deg;C
                             </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes" id="">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
-                        </div>
-                        <div class="tempTimes" id="">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <img src="icons/" alt="" class="smallIcon">
+                            <div class="dayIcon"></div>
                         </div>
                     </div>
 
@@ -85,9 +85,12 @@
 
 
                 <div class="middleLeft">
-                    <img src="images/Sunny Dawn.png" alt="" class="currentWeatherBackPic" id="currentWeatherBackPic">
+                    <div class="currentWeatherBackPic" id="currentWeatherBackPic">
+                        <!-- <img src=""
+                    alt=""  class="currentWeatherBackPic" > -->
+                    </div>
                     <div class="selectedWeatherInfo">
-                    <img src="icons/" alt="" class="currentWeatherIcon" id="currentWeatherIcon">
+                    <div class="currentWeatherIcon" id="currentWeatherIcon"></div>
                     <p><span class="currentTemp" id="currentTemp">38</span>
                         &deg;C
                     </p>
@@ -104,38 +107,36 @@
 
                     <div class="otherTempStates" id="otherTempStates">
                         
-                        <div class="tempState" id="tempState">
-                            <img src="icons/" alt="" class="mediumIcon">
+                        <div class="tempState">
+                            <img src="icons/humidity.svg" alt="" class="c-icons">
                             <p class="state smaller-font">Humidity</p>
-                            <p class="smaller-font" id="humidity">30.6%</p>
+                            <p class="smaller-font"><span id="humidity">30.6</span><span>&percnt;</span></p>
                         </div>
-                        <div class="tempState" id="tempState">
-                            <img src="icons/" alt="" class="mediumIcon">
+                        <div class="tempState">
+                            <img src="icons/pressure.svg" alt="" class="c-icons">
                             <p class="state smaller-font">Pressure</p>
-                            <p class="smaller-font" id="temp">30.6%</p>
+                            <p class="smaller-font"><span id="pressure"></span><span>hPa</span></p>
                         </div>
-                        <div class="tempState" id="tempState">
-                            <img src="icons/" alt="" class="mediumIcon">
-                            <p class="state smaller-font" id="state">Wind Speed</p>
-                            <p class="smaller-font" id="temp">30.6%</p>
+                        <div class="tempState">
+                            <img src="icons/wind.svg" alt="" class="c-icons">
+                            <p class="state smaller-font">Wind Speed</p>
+                            <p class="smaller-font"><span id="windspeed">30.6</span><span>m/s</span></p>
                         </div>
-                        <div class="tempState" id="tempState">
-                            <img src="icons/" alt="" class="mediumIcon">
-                            <p class="state smaller-font" id="state">Wind Direction</p>
-                            <p class="smaller-font" id="temp">30.6%</p>
+                        <div class="tempState">
+                            <img src="icons/windsock.svg" alt="" class="c-icons">
+                            <p class="state smaller-font">Wind Direction</p>
+                            <p class="smaller-font"><span id="winddirection">30.6</span><span>&deg;</span></p>
                         </div>
-                        <div class="tempState" id="tempState">
-                            <img src="icons/" alt="" class="mediumIcon">
-                            <p class="state smaller-font" id="state">Cloudiness</p>
-                            <p class="smaller-font" id="temp">30.6%</p>
+                        <div class="tempState">
+                            <img src="icons/cloud.svg" alt="" class="c-icons">
+                            <p class="state smaller-font">Cloudiness</p>
+                            <p class="smaller-font"><span id="cloudiness">30.6</span><span>&percnt;</span></p>
                         </div>
                 </div>
             </div>
-        </div>
-
-
-
-        <div class="rightSide">
+            </div>
+        
+            <div class="rightSide">
 
             <div class="rightSideContainer">
                 
@@ -152,33 +153,37 @@
                     <img src="icons/" alt="" class="smallerIcon">
                 </div>
                 
-
-
                 <div>
-                    <input type="search" class="search" id="search">
-                    <button id="searchButton">Search</button>
+                    <form action="">
+                    <input type="search" class="search" id="search" placeholder="Enter City Name">
+                    <button id="searchButton" class="searchButton"><img src="icons/magnifying-glass.png" class="searchIcon"></button>
+                    </form>
                 </div>
 
                 <div class="controls">
-                    <button type="reset" class="control" id="refresh">
-                        <img src="icons/" alt="" class="mediumIcon">
-                        Refresh
+                    <button type="reset" class="control" id="reset">
+                        <img src="icons/refresh (1).svg" alt="" class="mediumIcon">
+                        <!-- Reset -->
                     </button>
-
-                    <button class="control">
-                        <img src="icons/" alt="" class="mediumIcon" id="weatherByMinute">
-                        History
+                    <button type="refresh" class="control" id="refreshWeatherData">
+                        <img src="icons/weather refresh.svg" alt="" class="mediumIcon">
+                        <!-- Refresh Weather -->
                     </button>
-                    <button class="control">
-                        <img src="icons/" alt="" class="mediumIcon" id="weatherByHour">
-                        Save
+                    <button class="control" id="history">
+                        <img src="icons/history.svg" alt="" class="mediumIcon">
+                        <!-- History -->
+                    </button>
+                    <button class="control" id="save">
+                        <img src="icons/diskette.svg" alt="" class="mediumIcon">
+                        <!-- Save -->
                     </button>
                   
                 </div>
             </div>
+            </div>
+    
         </div>
     </div>
-
 
 <script type="text/javascript" src="script.js"></script> 
 
