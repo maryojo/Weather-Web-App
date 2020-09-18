@@ -177,6 +177,8 @@ const getCityDate = (g) =>{
         }
     }
 
+    // dayofWeek = [dayName[0], dayName[1], dayName]
+
     //looping through for the icon of each day
     //icon changed to description
     //changes not applied to html class, dayIcon

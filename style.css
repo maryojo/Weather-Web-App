@@ -12,7 +12,7 @@ body{
     justify-content: center;
     height: 100vh;
     margin:0;
-    outline: none;
+    /* outline: none; */
     /* padding: 20px; */
 }
 
@@ -22,12 +22,15 @@ body{
     align-items: center;
     justify-content: center;
     margin: 0px auto;
-    width: 85%;
+    width: 100%;
 }
 
 .innerContainer{
+    
+    align-items: center;
+    justify-content: center;
     background-color: #17222D;
-    width: 95%;
+    width: 80%;
     border-radius: 30px;
     padding: 1.5em;
     display: flex;
@@ -37,7 +40,7 @@ body{
 .leftSide{
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 60%;
     justify-content: center;
 }
 
@@ -45,15 +48,30 @@ body{
     position: relative;
 }
 
+.test{
+    padding-top: 120px;
+    padding-bottom: 30px;;
+}
+
+.otherTempTimes{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 .otherTempTimes, .otherTempStates{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* position: absolute;
+    width: 100%;
+    overflow: hidden; */
 }
 
 .tempTimes, .tempState{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
 }
 
@@ -114,20 +132,29 @@ body{
     padding-left: 20px;
     border: none;
     border-radius: 20px;
-    width: 60%;
+    width: 100%;
     outline: none;
     /* justify-content: center; */
     font-size: 15px;
+    position: absolute;
 }
 
-img .searchIcon{
-    width: 20px;
-    height: 20px;
+.searchSegment{
+    position: relative;
 }
 
-.serachButton{
-    width: 10px;
-    height: 10px;
+.searchButton{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    border: none;
+    background-color: white;
+}
+
+.searchIcon{
+    width: 15px;
+    height: 15px;
+    border: none;
 }
 
 button{
@@ -156,9 +183,11 @@ button{
 
 
 
-@media(max-width: 800px){
+@media(max-width: 1000px){
     .container{
-        margin-top: 200px;
+        padding-top: 100px;
+        margin-top: 450px;
+        margin-bottom: 100px;
     }
 
     .title{
@@ -167,12 +196,44 @@ button{
 
     .innerContainer{
         flex-direction: column;
+        padding-bottom: 70px;
+        /* height: 80%; */
     }
 
+    .leftSide{
+        width: 70%;
+        padding-bottom: 50px;
+    }
+
+
+
     .currentWeatherBackPic{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .controls{
+        padding-top: 30px;
+    }
+
+    .control{
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .tempState{
+        padding-left: 10px;
+        padding-bottom: 0px;
+    }
+
+    .state{
+        visibility: hidden;
+    }
+
+    .smaller-font{
+        margin: 0px;
     }
 }
 
