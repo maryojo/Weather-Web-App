@@ -113,6 +113,10 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.tempRange{
+    font-size: 14px;
+}
+
 .c-icons{
     width:20px; 
 }
@@ -205,7 +209,9 @@ button{
         padding-bottom: 50px;
     }
 
-
+    .tempRange{
+        font-size: 13px;
+    }
 
     .currentWeatherBackPic{
         width: 100%;
@@ -232,9 +238,9 @@ button{
         visibility: hidden;
     }
 
-    .smaller-font{
+    /* .smaller-font{
         margin: 0px;
-    }
+    } */
 }
 
 @media(max-width: 400px){
@@ -270,6 +276,10 @@ button{
 
     .tempRange{
         font-size: 10px;
+    }
+
+    .weatherCondition{
+        font-size: 13px;
     }
 
     .tempState{
