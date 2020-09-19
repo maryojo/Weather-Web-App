@@ -44,7 +44,7 @@ body{
     justify-content: center;
 }
 
-.topLeft{
+.top{
     position: relative;
 }
 
@@ -134,7 +134,6 @@ body{
     border-radius: 20px;
     width: 100%;
     outline: none;
-    /* justify-content: center; */
     font-size: 15px;
     position: absolute;
 }
@@ -168,6 +167,7 @@ button{
     margin-left: 5px;
     width: 70px;
     height: 70px;
+    background-color: #fff;
 }
 
 .mediumIcon{
@@ -197,7 +197,6 @@ button{
     .innerContainer{
         flex-direction: column;
         padding-bottom: 70px;
-        /* height: 80%; */
     }
 
     .leftSide{
@@ -235,5 +234,54 @@ button{
     .smaller-font{
         margin: 0px;
     }
+}
+
+@media(max-width: 400px){
+    .container{
+        padding-top: 70px;
+        margin-top: 450px;
+        margin-bottom: 100px;
+    }
+
+    .title{
+        width: 40%;
+    }
+
+    .innerContainer{
+        flex-direction: column;
+        padding-bottom: 70px;
+        width: 90%;
+    }
+
+    .leftSide{
+        width: 70%;
+        padding-bottom: 40px;
+    }
+
+    .dayofWeek{
+        padding-bottom: 10px;
+    }
+
+    .test{
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .tempRange{
+        font-size: 10px;
+    }
+
+    .tempState{
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 50px;
+    
+    }
+    .tempTimes{
+        padding: 0px;
+        padding-left: 6px;
+        padding-right: 6px;
+        }
 }
 
