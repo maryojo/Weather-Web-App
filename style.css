@@ -4,6 +4,7 @@
 
 body{
     background-image: url(images/app-background.png);
+    /* background-repeat: ; */
     font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
     color: #fff;
     display: flex;
@@ -204,6 +205,7 @@ button{
         padding-bottom: 70px;
     }
 
+
     .leftSide{
         width: 70%;
         padding-bottom: 50px;
@@ -270,7 +272,7 @@ button{
     }
 
     .test{
-        padding-top: 100px;
+        padding-top: 110px;
         padding-bottom: 30px;
     }
 
