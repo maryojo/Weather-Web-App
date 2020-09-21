@@ -1,0 +1,17 @@
+{
+    "name": "Weathrr.",
+    "short_name": "Weathrr",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#17222D",
+    "theme_color": "#06080a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icons/cloud.svg",
+            "type": "image/svg",
+            "sizes": "72x72"
+        }
+    ]
+
+}

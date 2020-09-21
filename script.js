@@ -40,6 +40,9 @@ const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 //GET CURRENT LOCATION
 //Functions
 //Check if geolocation is supported
+
+
+
 const checkGeolocator = () =>{
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(getPositionHere);
@@ -50,6 +53,7 @@ if(navigator.geolocation){
 }
 }
 
+
 let u, apiCoordCall, dayName, cityNameInput;
 
 let cityName, countryName, currentLocationWeather, minTemp, maxTemp;
@@ -58,7 +62,6 @@ let getHumidity, getPressure, getWindSpeed, getWindDirection, getCloudiness;
 
 //Get current location, convert to city name and get weather details
 //Add catch in case of error
-
 
 
 //On click of search button, get city name from input and run function
@@ -92,15 +95,26 @@ const getCityDate = (g) =>{
 .then(response => response.json())
 .then(data => {
     console.log(data);
+    
+    localStorage.setItem('data', checkS(data));
+
+    function checkS(s){
+        if (typeof data != "string"){
+            s = JSON.stringify(s);
+        } return s;
+    }
 
     //Convert latitude & longitude to Location Name
     cityName = data['name'];
+    // currentLocation.innerHTML = `${cityName}`;
     countryName = data['sys']['country'];
     weatherIcon = data['weather'][0]['icon'];
     currentLocationWeather = data['main']['temp'];
     minTemp = data['main']['temp_min'];
     maxTemp = data['main']['temp_max'];
     weatherDescription = data['weather'][0]['description'];
+
+    
 
     //Other weather states
     getHumidity = data['main']['humidity'];
@@ -117,6 +131,8 @@ const getCityDate = (g) =>{
     //Showing the data gotten in UI
     currentLocation.innerHTML = `${cityName}, ${countryName}`;
 
+    
+
     currentWeatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png">`;
 
     currentTemp.innerHTML = `${currentLocationWeather}`;
@@ -130,6 +146,11 @@ const getCityDate = (g) =>{
     windspeed.innerHTML = `${getWindSpeed}`;
     winddirection.innerHTML = `${getWindDirection}`;
     cloudiness.innerHTML = `${getCloudiness}`;
+
+    // }
+
+    // gt();
+    
 
     return fetch ('https://api.openweathermap.org/data/2.5/onecall?lat='+latitude+'&lon='+longitude+'&appid=d74fc369be79084d255892637839ecab&units=metric');
 }) .then(response => response.json())
@@ -214,6 +235,34 @@ const getCityDate = (g) =>{
         u = setInterval(() => {
             getTime();
         }, 10);
+    
+})
+.catch(() =>{
+
+            console.log(1);
+        // const getSavedData = (k) =>{
+            function getS(k){
+                if(localStorage.getItem(k) === null){
+                    alert("Sorry");
+                } else {
+                    return JSON.parse(localStorage.getItem(k));
+                }
+            
+            }
+            
+        
+            let myData = getS('data');
+        
+            data = myData;
+        
+            currentLocation.innerHTML = data['name'];
+            
+            console.log(data);
+        
+    
+            // const d = () => {
+            //     console.log(3);
+            
 
 })
 
@@ -244,10 +293,16 @@ refreshWeather.addEventListener('click', function(){
     }
 });
 
+// save.addEventListener("click", function(){
+//     if(localStorage.getItem('data') === null){
+//         alert("Sorry");
+//     } else {
+//         let myData = JSON.parse(localStorage.getItem('data'));
+//         localStorage.setItem('saved-search:', JSON.stringify(myData));
 
-// const checkWeatherBackPic = () =>{
-//     if()
-// }
+//     }
+// });
+
 //app features
 //  store recent searches in local storage
-    
+

@@ -1,192 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <img src="images/Asset 1.png" alt="" class="title" />
 
-        <img src="images/Asset 1.png" alt="" class="title">
-
-        <div class="innerContainer">
-
-            <div class="leftSide">
-                <div class="topLeft">
-                    <div class="top">
-
-                    <div class="otherTempTimes">
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek today">Monday</p>
-                            <p class="smaller-font today">
-                                <span class="otherTemp today"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Tuesday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Wednesday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Thursday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Friday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Saturday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Sunday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                        <div class="tempTimes">
-                            <p class="smaller-font dayofWeek">Monday</p>
-                            <p class="smaller-font">
-                                <span class="otherTemp"></span>&deg;C
-                            </p>
-                            <div class="dayIcon"></div>
-                        </div>
-                    </div>
-
-                    <!-- <button class="scroll rightScroll" id="rightScroll"></button> -->
-                    </div>
-
+      <div class="innerContainer">
+        <div class="leftSide">
+          <div class="topLeft">
+            <div class="top">
+              <div class="otherTempTimes">
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek today">Monday</p>
+                  <p class="smaller-font today">
+                    <span class="otherTemp today"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
                 </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Tuesday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Wednesday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Thursday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Anyday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Saturday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Sunday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+                <div class="tempTimes">
+                  <p class="smaller-font dayofWeek">Monday</p>
+                  <p class="smaller-font">
+                    <span class="otherTemp"></span>&deg;C
+                  </p>
+                  <div class="dayIcon"></div>
+                </div>
+              </div>
 
-                <div class="test">
-                <div class="middleLeft">
-                    <div class="currentWeatherBackPic" id="currentWeatherBackPic">
-                        <!-- <img src=""
+              <!-- <button class="scroll rightScroll" id="rightScroll"></button> -->
+            </div>
+          </div>
+
+          <div class="test">
+            <div class="middleLeft">
+              <div class="currentWeatherBackPic" id="currentWeatherBackPic">
+                <!-- <img src=""
                     alt=""  class="currentWeatherBackPic" > -->
-                    </div>
-                    <div class="selectedWeatherInfo">
-                    <div class="currentWeatherIcon" id="currentWeatherIcon"></div>
-                    <p><span class="currentTemp" id="currentTemp">38</span>
-                        &deg;C
-                    </p>
-                    <p class="tempRange"><span id="tempLow"></span> &deg;C
-                        /
-                        <span id = "tempHigh"></span> &deg;C
-                    </p>
-                    <p class="weatherCondition" id="weatherCondition"></p>
-                    </div>
-                </div>
-                </div>
-
-                <div class="bottomLeft">
-
-                    <div class="otherTempStates" id="otherTempStates">
-                        
-                        <div class="tempState">
-                            <img src="icons/humidity.svg" alt="" class="c-icons">
-                            <p class="state smaller-font">Humidity</p>
-                            <p class="smaller-font"><span id="humidity">30.6</span><span>&percnt;</span></p>
-                        </div>
-                        <div class="tempState">
-                            <img src="icons/pressure.svg" alt="" class="c-icons">
-                            <p class="state smaller-font">Pressure</p>
-                            <p class="smaller-font"><span id="pressure"></span><span>hPa</span></p>
-                        </div>
-                        
-                        <div class="tempState">
-                            <img src="icons/windsock.svg" alt="" class="c-icons">
-                            <p class="state smaller-font">WindDirection</p>
-                            <p class="smaller-font"><span id="winddirection">30.6</span><span>&deg;</span></p>
-                        </div>
-                        <div class="tempState">
-                            <img src="icons/wind.svg" alt="" class="c-icons">
-                            <p class="state smaller-font">WindSpeed</p>
-                            <p class="smaller-font"><span id="windspeed">30.6</span><span>m/s</span></p>
-                        </div>
-                        <div class="tempState">
-                            <img src="icons/cloud.svg" alt="" class="c-icons">
-                            <p class="state smaller-font">Cloudiness</p>
-                            <p class="smaller-font"><span id="cloudiness">30.6</span><span>&percnt;</span></p>
-                        </div>
-                        
-                </div>
+              </div>
+              <div class="selectedWeatherInfo">
+                <div class="currentWeatherIcon" id="currentWeatherIcon"></div>
+                <p>
+                  <span class="currentTemp" id="currentTemp">38</span>
+                  &deg;C
+                </p>
+                <p class="tempRange">
+                  <span id="tempLow"></span> &deg;C /
+                  <span id="tempHigh"></span> &deg;C
+                </p>
+                <p class="weatherCondition" id="weatherCondition"></p>
+              </div>
             </div>
-            </div>
-        
-            <div class="rightSide">
+          </div>
 
-            <div class="rightSideContainer">
-                
-                <div class="rightTop">
-                    <p class="currentDate" id="currentDate"></p> 
-                    <img src="icons/" alt="" class="smallerIcon">
-                </div>
-                <div class="rightTop">
-                    <p class="currentTime" id="currentTime"></p> 
-                    <img src="icons/" alt="" class="smallerIcon">
-                </div>
-                <div class="rightTop">
-                    <p class="currentLocation" id="currentLocation"></p> 
-                    <img src="icons/" alt="" class="smallerIcon">
-                </div>
-                
-                <div class="searchSegment">
-                    <input type="search" class="search" id="search" placeholder="Enter City Name">
-                    <button id="searchButton" class="searchButton"><img src="icons/magnifying-glass.png" class="searchIcon"></button>
-                </div>
+          <div class="bottomLeft">
+            <div class="otherTempStates" id="otherTempStates">
+              <div class="tempState">
+                <img src="icons/humidity.svg" alt="" class="c-icons" />
+                <p class="state smaller-font">Humidity</p>
+                <p class="smaller-font">
+                  <span id="humidity">30.6</span><span>&percnt;</span>
+                </p>
+              </div>
+              <div class="tempState">
+                <img src="icons/pressure.svg" alt="" class="c-icons" />
+                <p class="state smaller-font">Pressure</p>
+                <p class="smaller-font">
+                  <span id="pressure"></span><span>hPa</span>
+                </p>
+              </div>
 
-                <div class="controls">
-                    <button type="reset" class="control" id="reset">
-                        <img src="icons/refresh.svg" alt="" class="mediumIcon">
-                        <!-- Reset -->
-                    </button>
-                    <button type="refresh" class="control" id="refreshWeatherData">
-                        <img src="icons/weather refresh.svg" alt="" class="mediumIcon">
-                        <!-- Refresh Weather -->
-                    </button>
-                    <button class="control" id="history">
-                        <img src="icons/history.svg" alt="" class="mediumIcon">
-                        <!-- History -->
-                    </button>
-                    <button class="control" id="save">
-                        <img src="icons/save-button.svg" alt="" class="mediumIcon">
-                        <!-- Save -->
-                    </button>
-                  
-                </div>
+              <div class="tempState">
+                <img src="icons/windsock.svg" alt="" class="c-icons" />
+                <p class="state smaller-font">WindDirection</p>
+                <p class="smaller-font">
+                  <span id="winddirection">30.6</span><span>&deg;</span>
+                </p>
+              </div>
+              <div class="tempState">
+                <img src="icons/wind.svg" alt="" class="c-icons" />
+                <p class="state smaller-font">WindSpeed</p>
+                <p class="smaller-font">
+                  <span id="windspeed">30.6</span><span>m/s</span>
+                </p>
+              </div>
+              <div class="tempState">
+                <img src="icons/cloud.svg" alt="" class="c-icons" />
+                <p class="state smaller-font">Cloudiness</p>
+                <p class="smaller-font">
+                  <span id="cloudiness">30.6</span><span>&percnt;</span>
+                </p>
+              </div>
             </div>
-            </div>
-    
+          </div>
         </div>
+
+        <div class="rightSide">
+          <div class="rightSideContainer">
+            <div class="rightTop">
+              <p class="currentDate" id="currentDate"></p>
+              <img src="icons/" alt="" class="smallerIcon" />
+            </div>
+            <div class="rightTop">
+              <p class="currentTime" id="currentTime"></p>
+              <img src="icons/" alt="" class="smallerIcon" />
+            </div>
+            <div class="rightTop">
+              <p class="currentLocation" id="currentLocation"></p>
+              <img src="icons/" alt="" class="smallerIcon" />
+            </div>
+
+            <div class="searchSegment">
+              <input
+                type="search"
+                class="search"
+                id="search"
+                placeholder="Enter City Name"
+              />
+              <button id="searchButton" class="searchButton">
+                <img src="icons/magnifying-glass.png" class="searchIcon" />
+              </button>
+            </div>
+
+            <div class="controls">
+              <button type="reset" class="control" id="reset">
+                <img src="icons/refresh.svg" alt="" class="mediumIcon" />
+                <!-- Reset -->
+              </button>
+              <button type="refresh" class="control" id="refreshWeatherData">
+                <img
+                  src="icons/weather refresh.svg"
+                  alt=""
+                  class="mediumIcon"
+                />
+                <!-- Refresh Weather -->
+              </button>
+              <button class="control" id="history">
+                <img src="icons/history.svg" alt="" class="mediumIcon" />
+                <!-- History -->
+              </button>
+              <button class="control" id="save">
+                <img src="icons/save-button.svg" alt="" class="mediumIcon" />
+                <!-- Save -->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-<script type="text/javascript" src="script.js"></script> 
-
-</body>
-
+    <script src="app.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>

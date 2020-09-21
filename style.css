@@ -1,88 +1,89 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-image: url(images/app-background.png);
-    /* background-repeat: ; */
-    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-    color: #fff;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin:0;
-    /* outline: none; */
-    /* padding: 20px; */
+body {
+  background-image: url(images/app-background.png);
+  /* background-repeat: ; */
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  /* outline: none; */
+  /* padding: 20px; */
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0px auto;
-    width: 100%;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
+  width: 100%;
 }
 
-.innerContainer{
-    
-    align-items: center;
-    justify-content: center;
-    background-color: #17222D;
-    width: 80%;
-    border-radius: 30px;
-    padding: 1.5em;
-    display: flex;
-    flex-direction:row;
+.innerContainer {
+  align-items: center;
+  justify-content: center;
+  background-color: #17222d;
+  width: 80%;
+  border-radius: 30px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
 }
 
-.leftSide{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    justify-content: center;
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
 }
 
-.top{
-    position: relative;
+.top {
+  position: relative;
 }
 
-.test{
-    padding-top: 120px;
-    padding-bottom: 30px;;
+.test {
+  padding-top: 120px;
+  padding-bottom: 30px;
 }
 
-.otherTempTimes{
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 10px;
+.otherTempTimes {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.otherTempTimes, .otherTempStates{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* position: absolute;
+.otherTempTimes,
+.otherTempStates {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* position: absolute;
     width: 100%;
     overflow: hidden; */
 }
 
-.tempTimes, .tempState{
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
+.tempTimes,
+.tempState {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
 }
 
-.today{
-    font-weight: 600 !important;
+.today {
+  font-weight: 600 !important;
 }
 
-.smaller-font{
-    font-weight: 200;
-    font-size: 11px;
+.smaller-font {
+  font-weight: 200;
+  font-size: 11px;
 }
 
 /* 
@@ -91,210 +92,210 @@ body{
     width: 70px;
 } */
 
-.currentWeatherBackPic{
-    height: 45vh;
+.currentWeatherBackPic {
+  height: 45vh;
 }
 
-.weatherCondition{
-    text-transform: capitalize;
+.weatherCondition {
+  text-transform: capitalize;
 }
 
-.middleLeft{
-    position: relative;
-    margin: 0px auto;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+.middleLeft {
+  position: relative;
+  margin: 0px auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-.selectedWeatherInfo{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.selectedWeatherInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.tempRange{
-    font-size: 14px;
+.tempRange {
+  font-size: 14px;
 }
 
-.c-icons{
-    width:20px; 
+.c-icons {
+  width: 20px;
 }
 
-.rightSide{
-    margin-left: auto;
-    margin-right: auto;
+.rightSide {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.rightSideContainer{
-    display: flex;
+.rightSideContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  padding: 10px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  position: absolute;
+}
+
+.searchSegment {
+  position: relative;
+}
+
+.searchButton {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  border: none;
+  background-color: white;
+  outline: none;
+}
+
+.searchIcon {
+  width: 15px;
+  height: 15px;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.control {
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  margin-left: 5px;
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+}
+
+.mediumIcon {
+  width: 80%;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 20%;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding-top: 100px;
+    margin-top: 450px;
+    margin-bottom: 100px;
+  }
+
+  .title {
+    width: 40%;
+  }
+
+  .innerContainer {
     flex-direction: column;
-}
+    padding-bottom: 70px;
+  }
 
-.search{
-    padding: 10px;
-    padding-left: 20px;
-    border: none;
-    border-radius: 20px;
+  .leftSide {
+    width: 70%;
+    padding-bottom: 50px;
+  }
+
+  .tempRange {
+    font-size: 13px;
+  }
+
+  .test {
+    padding-top: 170px;
+    /* padding-bottom: 30px; */
+  }
+
+  .currentWeatherBackPic {
     width: 100%;
-    outline: none;
-    font-size: 15px;
-    position: absolute;
-}
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.searchSegment{
-    position: relative;
-}
+  .controls {
+    padding-top: 30px;
+  }
 
-.searchButton{
-    position: absolute;
-    right: 5px;
-    top: 10px;
-    border: none;
-    background-color: white;
-    outline: none;
-}
+  .control {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+  }
 
-.searchIcon{
-    width: 15px;
-    height: 15px;
-    border: none;
-}
+  .tempState {
+    padding-left: 10px;
+    padding-bottom: 0px;
+  }
 
-button{
-    cursor: pointer;
-}
+  .state {
+    visibility: hidden;
+  }
 
-.control{
-    border: none;
-    border-radius: 50%;
-    padding: 20px;
-    margin-left: 5px;
-    width: 70px;
-    height: 70px;
-    background-color: #fff;
-}
-
-.mediumIcon{
-    width: 80%;
-}
-
-.controls{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin-top: 20%;
-    justify-content: center;
-}
-
-
-
-@media(max-width: 1000px){
-    .container{
-        padding-top: 100px;
-        margin-top: 450px;
-        margin-bottom: 100px;
-    }
-
-    .title{
-        width: 40%;
-    }
-
-    .innerContainer{
-        flex-direction: column;
-        padding-bottom: 70px;
-    }
-
-
-    .leftSide{
-        width: 70%;
-        padding-bottom: 50px;
-    }
-
-    .tempRange{
-        font-size: 13px;
-    }
-
-    .currentWeatherBackPic{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .controls{
-        padding-top: 30px;
-    }
-
-    .control{
-        padding: 10px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .tempState{
-        padding-left: 10px;
-        padding-bottom: 0px;
-    }
-
-    .state{
-        visibility: hidden;
-    }
-
-    /* .smaller-font{
+  /* .smaller-font{
         margin: 0px;
     } */
 }
 
-@media(max-width: 400px){
-    .container{
-        padding-top: 70px;
-        margin-top: 450px;
-        margin-bottom: 100px;
-    }
+@media (max-width: 400px) {
+  .container {
+    padding-top: 70px;
+    margin-top: 450px;
+    margin-bottom: 100px;
+  }
 
-    .title{
-        width: 40%;
-    }
+  .title {
+    width: 40%;
+  }
 
-    .innerContainer{
-        flex-direction: column;
-        padding-bottom: 70px;
-        width: 90%;
-    }
+  .innerContainer {
+    flex-direction: column;
+    padding-bottom: 70px;
+    width: 90%;
+  }
 
-    .leftSide{
-        width: 70%;
-        padding-bottom: 40px;
-    }
+  .leftSide {
+    width: 70%;
+    padding-bottom: 40px;
+  }
 
-    .dayofWeek{
-        padding-bottom: 10px;
-    }
+  .dayofWeek {
+    padding-bottom: 10px;
+  }
 
-    .test{
-        padding-top: 110px;
-        padding-bottom: 30px;
-    }
+  .test {
+    padding-top: 110px;
+    padding-bottom: 30px;
+  }
 
-    .tempRange{
-        font-size: 10px;
-    }
+  .tempRange {
+    font-size: 10px;
+  }
 
-    .weatherCondition{
-        font-size: 13px;
-    }
+  .weatherCondition {
+    font-size: 13px;
+  }
 
-    .tempState{
+  .tempState {
     padding: 0px;
     padding-left: 2px;
     padding-right: 2px;
     height: 50px;
-    
-    }
-    .tempTimes{
-        padding: 0px;
-        padding-left: 6px;
-        padding-right: 6px;
-        }
+  }
+  .tempTimes {
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
-
